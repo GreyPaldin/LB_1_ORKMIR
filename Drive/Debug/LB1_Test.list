@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  00020810  2**0
                   CONTENTS, READONLY
- 13 .debug_info   0000e778  00000000  00000000  00020840  2**0
+ 13 .debug_info   0000e6a0  00000000  00000000  00020840  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 00001f5a  00000000  00000000  0002efb8  2**0
+ 14 .debug_abbrev 00001f5a  00000000  00000000  0002eee0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000d48  00000000  00000000  00030f18  2**3
+ 15 .debug_aranges 00000d48  00000000  00000000  00030e40  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_ranges 00000c60  00000000  00000000  00031c60  2**3
+ 16 .debug_ranges 00000c60  00000000  00000000  00031b88  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00022fe4  00000000  00000000  000328c0  2**0
+ 17 .debug_macro  00022fe4  00000000  00000000  000327e8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00010322  00000000  00000000  000558a4  2**0
+ 18 .debug_line   00010322  00000000  00000000  000557cc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e1f82  00000000  00000000  00065bc6  2**0
+ 19 .debug_str    000e1f82  00000000  00000000  00065aee  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  00147b48  2**0
+ 20 .comment      00000053  00000000  00000000  00147a70  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  000037bc  00000000  00000000  00147b9c  2**2
+ 21 .debug_frame  000037bc  00000000  00000000  00147ac4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -512,7 +512,7 @@ void Display_Write_1(uint8_t pData, uint8_t s) {
  80005e4:	46bd      	mov	sp, r7
  80005e6:	bd80      	pop	{r7, pc}
  80005e8:	40020c00 	.word	0x40020c00
- 80005ec:	20000890 	.word	0x20000890
+ 80005ec:	20000838 	.word	0x20000838
 
 080005f0 <Way_Run>:
 
@@ -2706,7 +2706,7 @@ int main(void)
  8001560:	71bb      	strb	r3, [r7, #6]
 	  HAL_ADC_Start(&hadc1);
  8001562:	e7cc      	b.n	80014fe <main+0x3e>
- 8001564:	20000a48 	.word	0x20000a48
+ 8001564:	20000998 	.word	0x20000998
  8001568:	20000836 	.word	0x20000836
  800156c:	70381c0f 	.word	0x70381c0f
  8001570:	2000082c 	.word	0x2000082c
@@ -2976,7 +2976,7 @@ static void MX_ADC1_Init(void)
  80016e6:	3710      	adds	r7, #16
  80016e8:	46bd      	mov	sp, r7
  80016ea:	bd80      	pop	{r7, pc}
- 80016ec:	20000a48 	.word	0x20000a48
+ 80016ec:	20000998 	.word	0x20000998
  80016f0:	40012000 	.word	0x40012000
  80016f4:	0f000001 	.word	0x0f000001
 
@@ -3059,7 +3059,7 @@ static void MX_SPI1_Init(void)
 }
  8001758:	bf00      	nop
  800175a:	bd80      	pop	{r7, pc}
- 800175c:	20000998 	.word	0x20000998
+ 800175c:	20000a80 	.word	0x20000a80
  8001760:	40013000 	.word	0x40013000
 
 08001764 <MX_SPI2_Init>:
@@ -3141,7 +3141,7 @@ static void MX_SPI2_Init(void)
 }
  80017c4:	bf00      	nop
  80017c6:	bd80      	pop	{r7, pc}
- 80017c8:	20000838 	.word	0x20000838
+ 80017c8:	20000890 	.word	0x20000890
  80017cc:	40003800 	.word	0x40003800
 
 080017d0 <MX_SPI3_Init>:
@@ -3223,7 +3223,7 @@ static void MX_SPI3_Init(void)
 }
  8001830:	bf00      	nop
  8001832:	bd80      	pop	{r7, pc}
- 8001834:	200008e8 	.word	0x200008e8
+ 8001834:	20000940 	.word	0x20000940
  8001838:	40003c00 	.word	0x40003c00
 
 0800183c <MX_SPI4_Init>:
@@ -3305,7 +3305,7 @@ static void MX_SPI4_Init(void)
 }
  800189c:	bf00      	nop
  800189e:	bd80      	pop	{r7, pc}
- 80018a0:	20000940 	.word	0x20000940
+ 80018a0:	200009e0 	.word	0x200009e0
  80018a4:	40013400 	.word	0x40013400
 
 080018a8 <MX_SPI5_Init>:
@@ -3387,7 +3387,7 @@ static void MX_SPI5_Init(void)
 }
  8001908:	bf00      	nop
  800190a:	bd80      	pop	{r7, pc}
- 800190c:	20000890 	.word	0x20000890
+ 800190c:	20000838 	.word	0x20000838
  8001910:	40015000 	.word	0x40015000
 
 08001914 <MX_SPI6_Init>:
@@ -3469,7 +3469,7 @@ static void MX_SPI6_Init(void)
 }
  8001974:	bf00      	nop
  8001976:	bd80      	pop	{r7, pc}
- 8001978:	200009f0 	.word	0x200009f0
+ 8001978:	200008e8 	.word	0x200008e8
  800197c:	40015400 	.word	0x40015400
 
 08001980 <MX_TIM1_Init>:
@@ -3584,7 +3584,7 @@ static void MX_TIM1_Init(void)
  8001a16:	46bd      	mov	sp, r7
  8001a18:	bd80      	pop	{r7, pc}
  8001a1a:	bf00      	nop
- 8001a1c:	20000a90 	.word	0x20000a90
+ 8001a1c:	20000a38 	.word	0x20000a38
  8001a20:	40010000 	.word	0x40010000
 
 08001a24 <MX_TIM2_Init>:
@@ -4785,7 +4785,7 @@ void TIM1_UP_TIM10_IRQHandler(void)
  800211e:	bf00      	nop
  8002120:	bd80      	pop	{r7, pc}
  8002122:	bf00      	nop
- 8002124:	20000a90 	.word	0x20000a90
+ 8002124:	20000a38 	.word	0x20000a38
 
 08002128 <TIM2_IRQHandler>:
 

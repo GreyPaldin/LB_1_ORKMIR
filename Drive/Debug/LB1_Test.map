@@ -22,16 +22,16 @@ d:/program/education/stm32/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32c
 Allocating common symbols
 Common symbol       size              file
 
-hspi2               0x58              ./Core/Src/display.o
+hspi2               0x58              ./Core/Src/main.o
 hspi5               0x58              ./Core/Src/display.o
 uwTick              0x4               ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
 hspi6               0x58              ./Core/Src/main.o
 pFlash              0x20              ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o
-hspi3               0x58              ./Core/Src/display.o
+hspi3               0x58              ./Core/Src/main.o
 hadc1               0x48              ./Core/Src/main.o
-hspi4               0x58              ./Core/Src/display.o
+hspi4               0x58              ./Core/Src/main.o
 htim1               0x48              ./Core/Src/main.o
-hspi1               0x58              ./Core/Src/display.o
+hspi1               0x58              ./Core/Src/main.o
 htim2               0x48              ./Core/Src/main.o
 
 Discarded input sections
@@ -3899,16 +3899,16 @@ LOAD d:/program/education/stm32/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.s
  .bss.g         0x0000000020000836        0x2 ./Core/Src/main.o
                 0x0000000020000836                g
  *(COMMON)
- COMMON         0x0000000020000838      0x1b8 ./Core/Src/display.o
-                0x0000000020000838                hspi2
-                0x0000000020000890                hspi5
-                0x00000000200008e8                hspi3
-                0x0000000020000940                hspi4
-                0x0000000020000998                hspi1
- COMMON         0x00000000200009f0      0x130 ./Core/Src/main.o
-                0x00000000200009f0                hspi6
-                0x0000000020000a48                hadc1
-                0x0000000020000a90                htim1
+ COMMON         0x0000000020000838       0x58 ./Core/Src/display.o
+                0x0000000020000838                hspi5
+ COMMON         0x0000000020000890      0x290 ./Core/Src/main.o
+                0x0000000020000890                hspi2
+                0x00000000200008e8                hspi6
+                0x0000000020000940                hspi3
+                0x0000000020000998                hadc1
+                0x00000000200009e0                hspi4
+                0x0000000020000a38                htim1
+                0x0000000020000a80                hspi1
                 0x0000000020000ad8                htim2
  COMMON         0x0000000020000b20        0x4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                 0x0000000020000b20                uwTick
@@ -3990,22 +3990,22 @@ LOAD d:/program/education/stm32/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.s
 LOAD d:/program/education/stm32/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD d:/program/education/stm32/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x0000000000000000     0xe778
- .debug_info    0x0000000000000000     0x1152 ./Core/Src/display.o
- .debug_info    0x0000000000001152     0x155a ./Core/Src/main.o
- .debug_info    0x00000000000026ac     0x153c ./Core/Src/stm32f4xx_hal_msp.o
- .debug_info    0x0000000000003be8      0xb5e ./Core/Src/stm32f4xx_it.o
- .debug_info    0x0000000000004746      0x5c0 ./Core/Src/system_stm32f4xx.o
- .debug_info    0x0000000000004d06       0x22 ./Core/Startup/startup_stm32f429zitx.o
- .debug_info    0x0000000000004d28      0xa2a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_info    0x0000000000005752      0xddc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_info    0x000000000000652e      0xf0d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_info    0x000000000000743b      0x85a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_info    0x0000000000007c95      0x7ae ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
- .debug_info    0x0000000000008443      0x9b2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_info    0x0000000000008df5     0x17c0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_info    0x000000000000a5b5     0x2c21 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_info    0x000000000000d1d6     0x15a2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+.debug_info     0x0000000000000000     0xe6a0
+ .debug_info    0x0000000000000000     0x110a ./Core/Src/display.o
+ .debug_info    0x000000000000110a     0x155a ./Core/Src/main.o
+ .debug_info    0x0000000000002664     0x14f4 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_info    0x0000000000003b58      0xb16 ./Core/Src/stm32f4xx_it.o
+ .debug_info    0x000000000000466e      0x5c0 ./Core/Src/system_stm32f4xx.o
+ .debug_info    0x0000000000004c2e       0x22 ./Core/Startup/startup_stm32f429zitx.o
+ .debug_info    0x0000000000004c50      0xa2a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_info    0x000000000000567a      0xddc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_info    0x0000000000006456      0xf0d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_info    0x0000000000007363      0x85a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_info    0x0000000000007bbd      0x7ae ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
+ .debug_info    0x000000000000836b      0x9b2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_info    0x0000000000008d1d     0x17c0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_info    0x000000000000a4dd     0x2c21 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_info    0x000000000000d0fe     0x15a2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
 
 .debug_abbrev   0x0000000000000000     0x1f5a
  .debug_abbrev  0x0000000000000000      0x2ef ./Core/Src/display.o
@@ -4143,14 +4143,14 @@ LOAD d:/program/education/stm32/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.s
  .debug_line    0x000000000000e7bb     0x1b67 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
 
 .debug_str      0x0000000000000000    0xe1f82
- .debug_str     0x0000000000000000    0xde6a6 ./Core/Src/display.o
-                                      0xde982 (size before relaxing)
- .debug_str     0x00000000000de6a6      0x7eb ./Core/Src/main.o
+ .debug_str     0x0000000000000000    0xde68e ./Core/Src/display.o
+                                      0xde96a (size before relaxing)
+ .debug_str     0x00000000000de68e      0x803 ./Core/Src/main.o
                                       0xdf136 (size before relaxing)
  .debug_str     0x00000000000dee91      0x5ef ./Core/Src/stm32f4xx_hal_msp.o
-                                      0xdf414 (size before relaxing)
+                                      0xdf3fc (size before relaxing)
  .debug_str     0x00000000000df480       0xf5 ./Core/Src/stm32f4xx_it.o
-                                      0xdec14 (size before relaxing)
+                                      0xdebfc (size before relaxing)
  .debug_str     0x00000000000df575       0xaf ./Core/Src/system_stm32f4xx.o
                                       0xde488 (size before relaxing)
  .debug_str     0x00000000000df624       0x36 ./Core/Startup/startup_stm32f429zitx.o

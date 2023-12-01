@@ -47,7 +47,7 @@ void Clear_matrix(void){
 //Алгоритм вывода информации
 void Display_Write_1(uint8_t pData, uint8_t s) {
 
-
+		 //Выбор комбинации пинов А и Б для загрузки информации в нужную строку
 	     switch(s+1){
 	     		 	 case 1:
 	     			 	 HAL_GPIO_WritePin(GPIOD, A_Pin, 1);
@@ -66,11 +66,14 @@ void Display_Write_1(uint8_t pData, uint8_t s) {
 	     		 		 HAL_GPIO_WritePin(GPIOD, B_Pin, 0);
 	     		 		 break;
 	     		 }
-
+	     //Отключение матрицы перед загрузкой данных
 	     HAL_GPIO_WritePin(GPIOD, OE_Pin, GPIO_PIN_RESET);
 	     HAL_GPIO_WritePin(GPIOD, SCLK_Pin, GPIO_PIN_RESET);
+	     //Процесс загрузки информации
 	     HAL_SPI_Transmit(&hspi5, (uint8_t*) &pData, 1, 10);
+	     //Подача сигнала о применении загруженных данных
 		 HAL_GPIO_WritePin(GPIOD, SCLK_Pin, GPIO_PIN_SET);
+		 //Включение матрицы
 		 HAL_GPIO_WritePin(GPIOD, OE_Pin, GPIO_PIN_SET);
 }
 
@@ -227,8 +230,9 @@ void Show_matrix( int displ[16][32] ){
 	            uint8_t byte = 0;
 	            for (int k = 0; k < 8; k++) {
 	                // Собираем байт из битов, начиная с самого младшего
-	            	byte |= (displ[i][j * 8 + k] << (7-k)); //лучший преобразователь
+	            	byte |= (displ[i][j * 8 + k] << (7-k)); //лучший преобразователь с применением сдвига
 	            }
+	            //Запись получившегося байта данных в матрицу байтов
 	            bytesMatrix[i][j] = byte;
 	        }
 	}
@@ -490,7 +494,7 @@ void Display_Test(uint8_t a, uint8_t b) {
 		Callyzi_Car();
 		if ((Danger_offset() == 0)||(Callyzi_Car() == 0)){
 			Game_Over();
-			displ[16][32] = {
+			int displ[16][32] = {
 			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
 			{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
